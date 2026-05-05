@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0f">
+<title>Atlas Phoenix · Preconstruction Conference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f; --bg-elev: #13131c; --bg-elev-2: #1b1b26; --bg-elev-3: #22222e;
+    --border: #24242f; --border-bright: #33333f;
+    --text: #f0f0f5; --text-dim: #9a9aa8; --text-faint: #5a5a68;
+    --accent: #ff6b1a; --accent-bright: #ff9147;
+    --accent-dim: rgba(255,107,26,0.12); --accent-border: rgba(255,107,26,0.35);
+    --success: #22c55e; --success-dim: rgba(34,197,94,0.12);
+    --warn: #f59e0b; --warn-dim: rgba(245,158,11,0.12);
+    --info: #3b82f6; --info-dim: rgba(59,130,246,0.12);
+    --quiet: #6b7280; --quiet-dim: rgba(107,114,128,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body { background: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; overscroll-behavior: none; }
+  body { max-width: 440px; margin: 0 auto; padding: 0 0 60px; padding-top: env(safe-area-inset-top); position: relative; }
+  a { color: var(--accent); text-decoration: none; }
+
+  .hdr { padding: 18px 20px 14px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); }
+  .hdr-left { display: flex; align-items: center; gap: 10px; }
+  .hdr-logo { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--accent-bright)); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; color: #0a0a0f; box-shadow: 0 0 18px rgba(255,107,26,0.25); }
+  .hdr-title { display: flex; flex-direction: column; gap: 1px; }
+  .hdr-mark { font-size: 14px; font-weight: 800; letter-spacing: 1.6px; color: var(--accent); line-height: 1; }
+  .hdr-sub { font-size: 11px; font-weight: 500; letter-spacing: 0.4px; color: var(--text-dim); }
+  .hdr-back { font-size: 11px; color: var(--text-dim); font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase; }
+  .hdr-back:hover { color: var(--accent); }
+
+  .hero { margin: 14px 20px 0; background: linear-gradient(135deg, rgba(255,107,26,0.18), rgba(255,107,26,0.04)); border: 1px solid var(--accent-border); border-radius: 16px; padding: 18px; position: relative; overflow: hidden; }
+  .hero.planned { background: linear-gradient(135deg, rgba(59,130,246,0.16), rgba(59,130,246,0.04)); border-color: rgba(59,130,246,0.35); }
+  .hero.past { background: linear-gradient(135deg, rgba(107,114,128,0.16), rgba(107,114,128,0.04)); border-color: rgba(107,114,128,0.35); }
+  .hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; background: radial-gradient(circle, rgba(255,107,26,0.22), transparent 65%); pointer-events: none; }
+  .hero.planned::before { background: radial-gradient(circle, rgba(59,130,246,0.22), transparent 65%); }
+  .hero.past::before { background: radial-gradient(circle, rgba(107,114,128,0.18), transparent 65%); }
+  .hero-label { font-size: 10px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 6px; position: relative; }
+  .hero.planned .hero-label { color: var(--info); }
+  .hero.past .hero-label { color: var(--quiet); }
+  .hero-label::before { content: '●'; font-size: 8px; }
+  .hero.active .hero-label::before { animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .hero-name { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; margin-top: 8px; line-height: 1.15; position: relative; }
+  .hero-dest { font-size: 13px; color: var(--text-dim); margin-top: 4px; position: relative; }
+  .hero-meta { display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap; position: relative; }
+  .chip { display: inline-flex; align-items: center; gap: 5px; padding: 5px 10px; background: rgba(0,0,0,0.28); border: 1px solid var(--border); border-radius: 999px; font-size: 11px; font-weight: 600; color: var(--text-dim); letter-spacing: 0.3px; }
+  .chip.mono { font-family: 'JetBrains Mono', monospace; }
+  .chip strong { color: var(--text); font-weight: 700; }
+
+  .notice { margin: 16px 20px 0; padding: 11px 13px; background: rgba(245,158,11,0.08); border: 1px dashed rgba(245,158,11,0.4); border-radius: 10px; font-size: 12px; color: var(--text-dim); line-height: 1.45; }
+  .notice strong { color: var(--warn); font-weight: 700; }
+
+  .block { margin: 16px 20px 0; background: var(--bg-elev); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
+  .block-title { font-size: 10px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text-dim); margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .block-body { font-size: 13px; color: var(--text); line-height: 1.55; }
+  .block-body p { margin: 6px 0; color: var(--text-dim); }
+  .block-body ul { list-style: none; padding-left: 0; margin: 6px 0; }
+  .block-body li { position: relative; padding: 5px 0 5px 14px; color: var(--text-dim); border-bottom: 1px solid var(--bg-elev-2); font-size: 12.5px; line-height: 1.45; }
+  .block-body li:last-child { border-bottom: none; }
+  .block-body li::before { content: '·'; color: var(--accent); position: absolute; left: 4px; font-weight: 700; }
+  .block-body strong { color: var(--text); font-weight: 700; }
+  .block-body code { background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); }
+  .block-body blockquote.quote { background: var(--bg); border-left: 3px solid var(--accent); padding: 10px 12px; margin: 8px 0; border-radius: 6px; font-size: 12.5px; color: var(--text); }
+  .block-body blockquote.quote p { margin: 0; color: var(--text); }
+  .block-body table.facts { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 12px; }
+  .block-body table.facts td { border-bottom: 1px solid var(--bg-elev-2); padding: 6px 4px; vertical-align: top; color: var(--text-dim); }
+  .block-body table.facts tr:last-child td { border-bottom: none; }
+  .block-body table.facts td:first-child { color: var(--text); font-weight: 600; }
+
+  .foot { padding: 30px 20px 20px; text-align: center; }
+  .foot-link { display: inline-block; padding: 8px 14px; background: var(--bg-elev); border: 1px solid var(--border); border-radius: 8px; font-size: 11px; font-weight: 600; color: var(--text-dim); letter-spacing: 0.4px; }
+  .foot-link:hover { color: var(--accent); border-color: var(--accent-border); }
+  .foot-stamp { font-size: 10px; color: var(--text-faint); font-family: 'JetBrains Mono', monospace; letter-spacing: 0.3px; margin-top: 12px; }
+  .foot-tag { font-size: 11px; color: var(--text-faint); margin-top: 4px; letter-spacing: 0.4px; }
+  .foot-tag .accent { color: var(--accent); font-weight: 700; }
+</style>
+</head>
+<body>
+  <header class="hdr">
+    <div class="hdr-left">
+      <div class="hdr-logo">A</div>
+      <div class="hdr-title">
+        <div class="hdr-mark">ATLAS</div>
+        <div class="hdr-sub">phoenix-may-2026</div>
+      </div>
+    </div>
+    <a class="hdr-back" href="https://vector-mac.github.io/">All trips</a>
+  </header>
+
+  <div class="hero active">
+    <div class="hero-label">Active now</div>
+    <div class="hero-name">Phoenix · Preconstruction Conference</div>
+    <div class="hero-dest">Phoenix · Preconstruction Conference</div>
+    <div class="hero-meta">
+      <span class="chip mono">Day <strong>1</strong>/4</span>
+      <span class="chip mono">May 5-8, 2026</span>
+    </div>
+  </div>
+
+  <div class="notice"><strong>Atlas placeholder.</strong> This dashboard was bootstrapped from state-file facts. The full morning render with calendar, weather, venue picks, and Atlas Updates feed runs on the next 6 AM cron.</div>
+
+  <section class="block block-status"><h2 class="block-title">Current Status</h2><div class="block-body"><blockquote class='quote'>
+<strong>Pre-flight</strong>. Departs GRR 5:05 PM ET on Tue May 5. Day 0 of 4. Hotel and conference confirmed.
+</blockquote></div></section>
+<section class="block block-dates"><h2 class="block-title">Dates</h2><div class="block-body"><ul>
+<li><strong>Depart GRR</strong>: Tue May 5, 2026 · 5:05 PM ET (WN 2194)</li>
+<li><strong>Connect</strong>: Chicago Midway · arrive 5:10 PM CT, depart 6:50 PM CT</li>
+<li><strong>Arrive PHX</strong>: Tue May 5, 2026 · 8:40 PM MST (WN 1601)</li>
+<li><strong>Return depart PHX</strong>: Fri May 8, 2026 · 8:10 AM MST (WN 3815, direct)</li>
+<li><strong>Return arrive MCI</strong>: Fri May 8, 2026 · 12:50 PM CT</li>
+<li><strong>Destination timezone</strong>: America/Phoenix (MST, no DST)</li>
+</ul></div></section>
+<section class="block block-flights"><h2 class="block-title">Flights</h2><div class="block-body"><ul>
+<li><strong>Outbound 1</strong>: Southwest 2194, GRR to MDW, Tue May 5 · 5:05 PM ET to 5:10 PM CT</li>
+<li><strong>Outbound 2</strong>: Southwest 1601, MDW to PHX, Tue May 5 · 6:50 PM CT to 8:40 PM MST</li>
+<li><strong>Return</strong>: Southwest 3815, PHX to MCI direct, Fri May 8 · 8:10 AM MST to 12:50 PM CT</li>
+<li><strong>Record locator</strong>: CD9ZH3</li>
+<li><strong>A-list Preferred</strong>: yes</li>
+<li><strong>Seats</strong>: 04D outbound 1, 04A onward</li>
+<li><strong>Visa</strong>: ending 0034</li>
+<li><strong>Cost</strong>: $646.10 Choice fare</li>
+</ul></div></section>
+<section class="block block-hotel"><h2 class="block-title">Hotel</h2><div class="block-body"><ul>
+<li><strong>Property</strong>: DoubleTree by Hilton Phoenix Midtown (per Calendar entry)</li>
+<li><strong>Check-in</strong>: Tue May 5</li>
+<li><strong>Check-out</strong>: Fri May 8 (or Sat May 9 per Calendar block, verify)</li>
+<li><strong>Reservation</strong>: (verify confirmation number on next morning run)</li>
+</ul></div></section>
+<section class="block block-purpose"><h2 class="block-title">Primary Purpose</h2><div class="block-body"><p><strong>Preconstruction Conference</strong> in Phoenix · May 5-8, 2026</p>
+<ul>
+<li>Calendar block titled &quot;Preconstruction Conference&quot; 5/5 to 5/8</li>
+<li>Verify session list, venue address, badge pickup details on next morning run</li>
+</ul></div></section>
+<section class="block block-logistics"><h2 class="block-title">Logistics</h2><div class="block-body"><ul>
+<li><strong>Time-zone note</strong>: Arizona stays on MST year-round, so no DST shift mid-trip.</li>
+</ul></div></section>
+
+  <footer class="foot">
+    <a class="foot-link" href="https://vector-mac.github.io/">Back to all trips</a>
+    <div class="foot-stamp">Last rendered: May 05, 2026 00:19 CDT</div>
+    <div class="foot-tag">Auto-updated by <span class="accent">Atlas</span></div>
+  </footer>
+</body>
+</html>
+<!-- ATLAS-RENDER-OK -->
