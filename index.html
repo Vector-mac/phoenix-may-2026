@@ -65,6 +65,8 @@
   .block-body li:last-child { border-bottom: none; }
   .block-body li::before { content: '·'; color: var(--accent); position: absolute; left: 4px; font-weight: 700; }
   .block-body strong { color: var(--text); font-weight: 700; }
+  .block-body a.venue-link { color: var(--accent); font-weight: 700; text-decoration: none; border-bottom: 1px dashed var(--accent-border); }
+  .block-body a.venue-link:hover { color: var(--accent-bright); }
   .block-body code { background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--accent); }
   .block-body blockquote.quote { background: var(--bg); border-left: 3px solid var(--accent); padding: 10px 12px; margin: 8px 0; border-radius: 6px; font-size: 12.5px; color: var(--text); }
   .block-body blockquote.quote p { margin: 0; color: var(--text); }
@@ -106,7 +108,7 @@
   <div class="notice"><strong>Atlas placeholder.</strong> This dashboard was bootstrapped from state-file facts. The full morning render with calendar, weather, venue picks, and Atlas Updates feed runs on the next 6 AM cron.</div>
 
   <section class="block block-status"><h2 class="block-title">Current Status</h2><div class="block-body"><blockquote class='quote'>
-<strong>Pre-flight</strong>. Departs GRR 5:05 PM ET on Tue May 5. Day 0 of 4. Hotel and conference confirmed.
+<strong>EN ROUTE PHX</strong>. WN 1601 MDW to PHX, scheduled landing 8:40 PM MST tonight. Hotel ~15-25 min by rideshare from Sky Harbor; check-in window stays open late. Day 1 of 4.
 </blockquote></div></section>
 <section class="block block-dates"><h2 class="block-title">Dates</h2><div class="block-body"><ul>
 <li><strong>Depart GRR</strong>: Tue May 5, 2026 · 5:05 PM ET (WN 2194)</li>
@@ -127,23 +129,73 @@
 <li><strong>Cost</strong>: $646.10 Choice fare</li>
 </ul></div></section>
 <section class="block block-hotel"><h2 class="block-title">Hotel</h2><div class="block-body"><ul>
-<li><strong>Property</strong>: DoubleTree by Hilton Phoenix Midtown (per Calendar entry)</li>
-<li><strong>Check-in</strong>: Tue May 5</li>
-<li><strong>Check-out</strong>: Fri May 8 (or Sat May 9 per Calendar block, verify)</li>
-<li><strong>Reservation</strong>: (verify confirmation number on next morning run)</li>
+<li><strong>Property</strong>: DoubleTree by Hilton Phoenix Midtown</li>
+<li><strong>Address</strong>: 4000 N Central Ave, Phoenix, AZ 85012</li>
+<li><strong>Confirmation</strong>: 97380308</li>
+<li><strong>Hilton Honors</strong>: Silver, member #338650436</li>
+<li><strong>Check-in</strong>: Tue May 5, 3:00 PM MST</li>
+<li><strong>Check-out</strong>: Fri May 8, 11:00 AM MST (3 nights)</li>
+<li><strong>Phone</strong>: +1 602-279-9811</li>
+<li><strong>Status</strong>: confirmed, Digital Key available (Hilton app)</li>
 </ul></div></section>
 <section class="block block-purpose"><h2 class="block-title">Primary Purpose</h2><div class="block-body"><p><strong>Preconstruction Conference</strong> in Phoenix · May 5-8, 2026</p>
 <ul>
 <li>Calendar block titled &quot;Preconstruction Conference&quot; 5/5 to 5/8</li>
 <li>Verify session list, venue address, badge pickup details on next morning run</li>
 </ul></div></section>
+<section class="block block-picks"><h2 class="block-title">Local Picks - Atlas Recommends</h2><div class="block-body"><blockquote class='quote'>
+<strong>Auto-curated for Phoenix nights + conference mornings.</strong> Cross-checked against your taste graph (solo bar seating, no alcohol-forward, anti-scene, peanut-aware), filtered for walking distance from the DoubleTree on Central. Heat-aware: outdoor only mornings + evenings, indoor midday alternatives noted.
+</blockquote>
+<p><strong>Tonight - Tue May 5 dinner (post-arrival)</strong></p>
+<ul>
+<li>You land 8:40 PM MST, hotel ~9:30 PM MST. Most Midtown fine dining is closed by then. Pragmatic call: keep it simple. Hotel front desk can confirm room service or quick takeout. <strong>Honest</strong>: the search returned no peanut-safe, alcohol-secondary, walkable, anti-scene venue still serving food past 10 PM on a Tuesday in Midtown that meets your bar. Better to bank energy for tomorrow&#x27;s pre-conference morning.</li>
+<li>If you do want to walk somewhere: the DoubleTree&#x27;s on-site lobby food is the safe bet; otherwise the area has 24-hour Mexican (Taqueria Los Yaquis, Central + Camelback corridor) but it&#x27;s bar-adjacent and not the right fit per your taste graph. Source: Visit Phoenix late-night guide.</li>
+</ul>
+<p><strong>Wed May 6 dinner (post-conference Day 1)</strong></p>
+<ul>
+<li><strong>#1 - Durant&#x27;s Steakhouse.</strong> 2611 N Central Ave, ~1.4 mi south of hotel, 5-min rideshare or short walk. Reopened Dec 2025 under new ownership, classic Phoenix landmark. Hand-cut steaks, slow-roasted prime rib, fresh seafood. Why it fits: matches your steakhouse-with-bar-seating-default pattern (Gordon Ramsay Steak Vegas 5-star), warm hospitality, not &quot;scene Italian.&quot; Tuesday-Sunday hours run 4 PM-9:15 PM, so book a 7 PM. Reservation strongly recommended. Peanut note: classic American steakhouse, low peanut risk, but ask kitchen at order. Source: durantsaz.com / OpenTable.</li>
+<li><strong>#2 - Persepshen.</strong> 4700 N Central Ave, 0.4 mi north of hotel, walkable. Midtown culinary gem, warm room, hospitality-driven. Why it fits: hospitality-first pattern. Verify menu structure with kitchen at order time for peanut and tree-nut cross-contact. Source: phoenixwanderer.com.</li>
+<li><strong>#3 - Clever Koi.</strong> 4236 N Central Ave, ~0.2 mi north, walkable. Asian-inspired ramen and steamed buns. <strong>Peanut warning</strong>: this is on the edge of your &quot;Asian cuisines that commonly use peanut oil or garnish&quot; rule. Only consider if the kitchen explicitly confirms peanut-free at order. Otherwise skip. Source: phoenixwanderer.com.</li>
+</ul>
+<p><strong>Tomorrow morning - Wed May 6 breakfast (pre-conference)</strong></p>
+<ul>
+<li><strong>#1 - Lux Central.</strong> 4402 N Central Ave, ~0.4 mi north of hotel. Indie roaster, beans hand-roasted in-house from Brazil/Sumatra/Nicaragua, baristas know their craft. Full breakfast eats too. This is your local-indie-coffee-within-10-min-walk slot, plus the Vesta Coffee regret rule. Source: phoenixwanderer.com / Phoenix New Times.</li>
+<li><strong>#2 - Tandy&#x27;s Cafe &amp; Embers Chocolate.</strong> Chef-owned, breakfast and pastries plus bean-to-bar chocolate roasted in-house. Midtown Phoenix. Use as the heartier-meal alternative if Lux is just coffee + pastry. Note: positioned as breakfast/cafe, not the brunch pattern your taste graph blacklists. Source: tandyscafe.com.</li>
+<li><strong>Lunch on conference days</strong>: per your taste graph, default to whatever the conference provides. Don&#x27;t plan offsite unless flagged.</li>
+</ul>
+<p><strong>Live &amp; local</strong></p>
+<ul>
+<li><strong>Tue May 5</strong>: D-backs vs Pirates 6:40 PM at Chase Field (you arrive after first pitch, skip).</li>
+<li><strong>Wed May 6</strong>: D-backs vs Pirates 6:40 PM at Chase Field, ~3 mi south of hotel. Doable if conference Day 1 wraps by 5:30 PM and you choose this over Durant&#x27;s. Source: ticketmaster.com.</li>
+<li><strong>Thu May 7</strong>: D-backs vs Pirates 12:40 PM at Chase Field (day game, conference conflict). RAYE concert 7 PM at Arizona Financial Theatre and Fishbone 7 PM at Nile Theater (Mesa) - neither on your watchlist.</li>
+<li><strong>Fri May 8</strong>: you depart 8:10 AM MST, all events miss the window.</li>
+<li><strong>Watchlist scan</strong>: Metallica, Eric Church, GNR, Seether, FFDP, Tool, Phish, Clutch, Puscifer - none in Phoenix May 5-8 per Songkick / Ticketmaster / JamBase. Honest: no concert worth flexing the conference around. Source: songkick.com / jambase.com / ticketmaster.com.</li>
+<li><strong>Suns playoffs</strong>: Western Conference Semifinals Home Game 1 was Tue May 5 (you arrive too late). Subsequent home games depend on bracket; check the app.</li>
+</ul>
+<p><strong>Walking nearby (heat-aware, May in Phoenix)</strong></p>
+<ul>
+<li><strong>Heard Museum.</strong> 2301 N Central Ave, ~1.7 mi south on Central. Indigenous art, 40,000+ objects across 12 galleries. <strong>Indoor</strong>, midday-friendly when the heat hits. Best Wed midday or Thu midday if conference allows. Source: visitphoenix.com.</li>
+<li><strong>Phoenix Art Museum.</strong> ~1.5 mi south of hotel, near the Heard. Indoor. Pair with Heard for a half-day art loop, very on-brand for your Nelson-Atkins playlist signal.</li>
+<li><strong>Encanto Park.</strong> ~1.0 mi south of hotel. Paved walking paths, lake, shaded trees. <strong>Outdoor only mornings (before 9 AM) or evenings (after 7 PM)</strong> in May; full sun midday will be brutal.</li>
+<li><strong>Central Avenue light rail walk.</strong> Sidewalks are continuous along Central; the corridor between 2300 and 5000 N Central is the cultural spine (Heard, PHX Art, Lux, Persepshen, Postino, Windsor, fà-me). Best done morning + early evening. Source: phoenix.gov / homes.com Midtown guide.</li>
+<li><strong>Skip note</strong>: skip outdoor Camelback Mountain hikes solo at midday in May. Heat exhaustion risk is real even for fit travelers.</li>
+</ul>
+<p><strong>Disclaimer</strong></p>
+<p>Atlas auto-curated these picks May 5 from your taste graph and constraints. This is NOT a substitute for the full morning render. Vote with a thumbs-up or thumbs-down by replying to the next morning ping.</p></div></section>
 <section class="block block-logistics"><h2 class="block-title">Logistics</h2><div class="block-body"><ul>
 <li><strong>Time-zone note</strong>: Arizona stays on MST year-round, so no DST shift mid-trip.</li>
+</ul></div></section>
+<section class="block block-fitness"><h2 class="block-title">Fitness</h2><div class="block-body"><blockquote class='quote'>
+Closest Planet Fitness locations from the DoubleTree on Central, ranked by distance. Tap a name to open Google Maps directions.
+</blockquote>
+<ul>
+<li><strong><a href="https://www.google.com/maps/dir/?api=1&amp;origin=4000%20N%20Central%20Ave%2C%20Phoenix%2C%20AZ%2085012&amp;destination=1625%20W%20Camelback%20Rd%2C%20Phoenix%2C%20AZ%2085015" class="venue-link">Planet Fitness Phoenix - Alhambra (Camelback)</a></strong> · 1625 W Camelback Rd, Phoenix, AZ 85015 · ~2.0 mi · short rideshare or drive. Closest 24-hour-style location to the hotel.</li>
+<li><strong><a href="https://www.google.com/maps/dir/?api=1&amp;origin=4000%20N%20Central%20Ave%2C%20Phoenix%2C%20AZ%2085012&amp;destination=3975%20E%20Thomas%20Rd%2C%20Phoenix%2C%20AZ%2085018" class="venue-link">Planet Fitness Phoenix - Arcadia</a></strong> · 3975 E Thomas Rd, Phoenix, AZ 85018 · ~3.5 mi · backup if Camelback is busy or you want to combine with east-side errands.</li>
 </ul></div></section>
 
   <footer class="foot">
     <a class="foot-link" href="https://vector-mac.github.io/">Back to all trips</a>
-    <div class="foot-stamp">Last rendered: May 05, 2026 00:19 CDT</div>
+    <div class="foot-stamp">Last rendered: May 05, 2026 16:28 CDT</div>
     <div class="foot-tag">Auto-updated by <span class="accent">Atlas</span></div>
   </footer>
 </body>
